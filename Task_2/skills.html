@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Skills Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        .skills-container {
+            width: 50%;
+            margin: auto;
+            padding: 10px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .skill {
+            margin: 20px 0;
+        }
+        .skill-name {
+            margin-bottom: 5px;
+        }
+        .skill-bar {
+            position: relative;
+            height: 25px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .skill-percentage {
+            position: absolute;
+            height: 100%;
+            background: #3498db;
+            width: 0;
+            border-radius: 5px;
+            transition: width 1.5s ease-in-out;
+        }
+        .skill-percentage-html { background: #e34c26; }
+        .skill-percentage-css { background: #264de4; }
+        .skill-percentage-js { background: #f0db4f; }
+        .skill-percentage-python { background: #4B8BBE; }
+        .skill-percentage-java { background: #f89820; }
+    </style>
+</head>
+<body>
+    <div class="skills-container">
+        <div class="skill">
+            <div class="skill-name">HTML</div>
+            <div class="skill-bar">
+                <div class="skill-percentage skill-percentage-html" data-percentage="90%"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">CSS</div>
+            <div class="skill-bar">
+                <div class="skill-percentage skill-percentage-css" data-percentage="80%"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">JavaScript</div>
+            <div class="skill-bar">
+                <div class="skill-percentage skill-percentage-js" data-percentage="70%"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">Python</div>
+            <div class="skill-bar">
+                <div class="skill-percentage skill-percentage-python" data-percentage="80%"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="skill-name">Java</div>
+            <div class="skill-bar">
+                <div class="skill-percentage skill-percentage-java" data-percentage="70%"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const skillBars = document.querySelectorAll('.skill-percentage');
+            skillBars.forEach(bar => {
+                const percentage = bar.getAttribute('data-percentage');
+                bar.style.width = percentage;
+            });
+        });
+    </script>
+</body>
+</html>
